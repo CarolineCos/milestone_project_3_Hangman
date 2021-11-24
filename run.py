@@ -1,49 +1,144 @@
 import random
 from words import words
 
+correctly_guessed_letters = []
+incorrectly_guessed_letters = []
+randomly_chosen_word = ""
+tries = 6
+game_over = False
+
+
 
 def get_word(words):
     """
     Randomly chooses a word from words.py and 
     loops until a word without a hypen or space is choosen
     """
-    word = random.choice(words)
+
+    global randomly_chosen_word
+
+    randomly_chosen_word = random.choice(words)
     while "-" in word or " " in word:
-        word = random.choice(words)
+        randomly_chosen_word = random.choice(words)
     
-    return word.upper()
+    return randomly_chosen_word.upper()
 
+def draw_word():
 
-
-def play(word):
     """
-    Replaces the letters of the choosen word with underscores.
-    Saves the guessed letters and words.
+    Checks if the letter is in the randomly chosen word. 
+    Either displays the letter or an underscore.
     """
-    word_completion = "_" * len(word)
-    guessed = False
-    guessed_letters = []
-    guessed_words = []
-    tries = 7
-    print("Lets play Hangman")
-    print(word_completion)
-    print(guessed_letters)
+    global correctly_guessed_letters
+    global randomly_chosen_word
 
+    for i in range(0, len(randomly_chosen_word)):
+        letter = randomly_chosen_word[i]
+        if letter in correctly_guessed_letters:
+            print(letter, end=" ")
+        else:
+            print("_", end=" ")
+    print("")
 
-    while not guessed and tries > 0:
-        guess = input("Guess a word or letter: ").upper
+def draw_hangman():
+    """
+    The different stages of the game if there is an incorrect guess
+    """
+    global tries
 
-        if len(guess) == 1 and guess.isalhpa():
-            if guess in guessed_letters:
-                print("You have already guessed", guess)
-                elif guess not in word:
-                    print("Sorry", guess, "is not in the word")
-                    tries -= 1
-                    guessed_letters.append.(guess) 
-                else:
-                    print("Great", guess, "is in the word!")
-                    guessed_letters.append(guess)
-                    
+    if tries == 6:
+        print("+------------+")
+        print("|            |")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("+--------+")
+    
+    elif tries == 5:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("+--------+")
+    
+    elif tries == 4:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|            |")
+        print("|")
+        print("|")
+        print("|")
+        print("+--------+")
+    
+     elif tries == 3:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|            |")
+        print("|           /")
+        print("|")
+        print("|")
+        print("+--------+")
+    
+    elif tries == 2:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|            |")
+        print("|           / \\")
+        print("|")
+        print("|")
+        print("+--------+")
+    
+    elif tries == 1:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|           /|")
+        print("|           / \\")
+        print("|")
+        print("|")
+        print("+--------+")
+
+     elif tries == 0:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|           /|\\")
+        print("|           / \\")
+        print("|")
+        print("|")
+        print("+--------+")
+        
+
+def get_valid_letter():
+    """
+    Validates if user imput is a letter and whether it has been used previously
+    """
+    
+    is_letter_valid = False
+    guess = ""
+
+    while is_letter_valid is False:
+        guess = input("Guess a letter: ").upper
+
+        if len(guess) <= 0 or len(guess) >1:
+            print("Guess must be 1 letter")
+        elif guess.isalpha():
+            if guess in correctly_guessed_letters or guess in incorrectly_guessed_letters:
+                print("You have already guessed this letter. Try again")
+            else:
+                is_letter_valid = True
+        else:
+            print("Guess must be a letter (a-z)")
+    
+    return guess
 
 
 
