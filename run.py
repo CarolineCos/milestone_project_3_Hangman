@@ -18,10 +18,13 @@ def get_word(words):
     global randomly_chosen_word
 
     randomly_chosen_word = random.choice(words)
-    while "-" in word or " " in word:
+    
+    while "-" in randomly_chosen_word or " " in randomly_chosen_word:
         randomly_chosen_word = random.choice(words)
     
     return randomly_chosen_word.upper()
+
+
 
 def draw_word():
 
@@ -76,7 +79,7 @@ def draw_hangman():
         print("|")
         print("+--------+")
     
-     elif tries == 3:
+    elif tries == 3:
         print("+------------+")
         print("|            |")
         print("|            O")
@@ -106,7 +109,7 @@ def draw_hangman():
         print("|")
         print("+--------+")
 
-     elif tries == 0:
+    elif tries == 0:
         print("+------------+")
         print("|            |")
         print("|            O")
@@ -123,17 +126,17 @@ def get_valid_letter():
     """
     
     is_letter_valid = False
-    guess = ""
+    letter = ""
 
     while is_letter_valid is False:
-        guess = input("Guess a letter: ").upper
-
-        if len(guess) <= 0 or len(guess) >1:
+        guess = input("Guess a letter: ")
+        guess.upper()
+        if len(guess) <= 0 or len(guess) > 1:
             print("Guess must be 1 letter")
         elif guess.isalpha():
             if guess in correctly_guessed_letters or guess in incorrectly_guessed_letters:
-                print("You have already guessed this letter. Try again")
-            else:
+                print("You have already guessed this letter" + guess + ".  Try again")
+            else:   
                 is_letter_valid = True
         else:
             print("Guess must be a letter (a-z)")
@@ -141,13 +144,61 @@ def get_valid_letter():
     return guess
 
 
+def guess_letter():
+    """
+    Checks if the letter in in the random word and will append it to the correct variable
+    """
+    global correctly_guessed_letters
+    global incorrectly_guessed_letters
+    global tries
 
+    guess = get_valid_letter()
 
-        
+    if guess in randomly_chosen_word:
+        correctly_guessed_letters.append(guess)
+    else:
+        incorrectly_guessed_letters.append(guess)
+        tries -= 1
 
+def is_game_over():
+    global tries
+    global game_over
+    global correctly_guessed_letters
 
-
+    if tries <= 0:
+        game_over = True
+        draw_hangman()
+        print("You lost, the word was " + randomly_chosen_word + ". Try again.")
+    else:
+        guessed_all_letters = True
+        for guess in randomly_chosen_word:
+            if guess not in correctly_guessed_letters:
+                guessed_all_letters = False
+                break
+        if guessed_all_letters:
+            game_over = True
+            print("You Won.")
 
 def main():
-    word = get_word(words)
-    play(word)
+
+    global game_over
+
+    print("Lets play Hangman!\n")
+    get_word(words)
+
+    while game_over is False:
+        draw_hangman()
+        draw_word()
+
+        if len(incorrectly_guessed_letters) > 0:
+            print("\n")
+            print("Incorrect guesses: ")
+            print(incorrectly_guessed_letters)
+
+        guess_letter()
+        is_game_over()
+    
+        
+
+if __name__=='__main__':
+    main()
