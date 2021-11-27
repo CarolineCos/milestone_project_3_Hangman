@@ -1,6 +1,7 @@
 import random
 from words import words
 
+
 correctly_guessed_letters = []
 incorrectly_guessed_letters = []
 randomly_chosen_word = ""
@@ -129,7 +130,7 @@ def get_valid_letter():
     letter = ""
 
     while is_letter_valid is False:
-        guess = input("Guess a letter: ")
+        guess = input("Guess a letter:\n ")
         guess.upper()
         if len(guess) <= 0 or len(guess) > 1:
             print("Guess must be 1 letter")
@@ -200,5 +201,5 @@ def main():
     
         
 
-if __name__=='__main__':
-    main()
+
+main()
