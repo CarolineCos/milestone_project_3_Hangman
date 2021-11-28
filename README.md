@@ -33,10 +33,11 @@ If the player does not guess the word before the image of the man is complete, t
 
 <img width="154" alt="2021-11-28 (2)" src="https://user-images.githubusercontent.com/87449935/143766468-1933b4de-c124-48d3-b3b0-f70b61244633.png">
 
-* Keeps a record of incorrect guesse
+* Keeps a record of incorrect guessed
 
+<img width="267" alt="2021-11-28 (3)" src="https://user-images.githubusercontent.com/87449935/143766735-b15cff9c-65b7-4ba3-b1d0-189424e1fd1a.png">
 
 * Validates the user imput.
 * Only letters a-z can be guessed and only one letter
 
-  
+ <img width="252" alt="2021-11-28 (6)" src="https://user-images.githubusercontent.com/87449935/143766740-a762a21f-e6fa-4502-b7ac-5d543617f0bd.png"> 
