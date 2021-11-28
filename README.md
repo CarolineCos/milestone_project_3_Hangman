@@ -22,3 +22,10 @@ If the player does not guess the word before the image of the man is complete, t
 
 ### Existing features
 
+  * Random word generation
+      * Word is randomly chosen
+      * Player cannot see what the word is, as the letters are replaced with underscores
+
+<img width="245" alt="2021-11-28 (1)" src="https://user-images.githubusercontent.com/87449935/143766269-a76a0c51-8e13-4434-8f1d-1b187048ef54.png">
+
+  
