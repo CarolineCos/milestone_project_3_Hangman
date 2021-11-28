@@ -46,5 +46,13 @@ If the player does not guess the word before the image of the man is complete, t
  
  I manually tested my project by doing the following:
  
- * I used [pep8 online](http://pep8online.com/) and rectified the errors that were shown, all clear now:
- * 
+ * I used [pep8 online](http://pep8online.com/) and rectified the errors that were shown, all issues resolved:
+
+<img width="682" alt="2021-11-28 (8)" src="https://user-images.githubusercontent.com/87449935/143766962-5eb23e8a-23fb-448f-9549-68eaeab0f33e.png">
+
+ * I imputed incorrect data, symbols, numbers, blank imput and more that one letter.
+ * Tested on the local terminal and the Code Institues Heroku terminal.
+ 
+ ## Bugs
+ 
+ 
