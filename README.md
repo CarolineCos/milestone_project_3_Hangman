@@ -41,3 +41,10 @@ If the player does not guess the word before the image of the man is complete, t
 * Only letters a-z can be guessed and only one letter
 
  <img width="252" alt="2021-11-28 (6)" src="https://user-images.githubusercontent.com/87449935/143766740-a762a21f-e6fa-4502-b7ac-5d543617f0bd.png"> 
+ 
+ ## Testing
+ 
+ I manually tested my project by doing the following:
+ 
+ * I used [pep8 online](http://pep8online.com/) and rectified the errors that were shown, all clear now:
+ * 
