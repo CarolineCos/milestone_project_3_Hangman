@@ -53,6 +53,55 @@ If the player does not guess the word before the image of the man is complete, t
  * I imputed incorrect data, symbols, numbers, blank imput and more that one letter.
  * Tested on the local terminal and the Code Institues Heroku terminal.
  
- ## Bugs
+## Bugs
+ 
+*  I had diffculty with displaying the hangman images and the blank word.
+
+## Remaining Bugs
+ 
+* No bugs remaining
+
+ ## Validater Testing
+
+* PEP8
+    * whitespace issues
+    * Indentation errors
+    * An if statement was too long
+    * Expected two lines only saw one
+    * No blank line at the end of the code
+    * NO ERRORS REMAINING
+
+ ## Deployment
+ 
+ * Open a new app
+ * Enter the project name
+ * Region - Europe
+ * Go to settings:
+     * config vars
+     * key - Port
+     * value - 8000
+     
+     * Add Buildpack
+     * Choose:
+     * Python then
+     * node.js
+* Go to Deploy
+* Search for github repository name
+* Then click connect to link Heroku to our Github repository
+* You can then choose to deploy project Automatically or Manually.
+
+
+ 
+ ## Credits
+ 
+ * Code institue for the deployment terminal
+ * Wikipedia for the details of the game
+ * PEP8online.com for validation
+ * AM I RESPONSIVE
+ * You Tube tutorials for inspiration and clarity on the structure and logic of this game:
+   * Kylie Ying
+   * Kite
+   * CS Students
+   
  
  
