@@ -28,4 +28,9 @@ If the player does not guess the word before the image of the man is complete, t
 
 <img width="245" alt="2021-11-28 (1)" src="https://user-images.githubusercontent.com/87449935/143766269-a76a0c51-8e13-4434-8f1d-1b187048ef54.png">
 
+* Accepts user imput
+* Display letter if correct in the randomly chosen word display
+
+<img width="154" alt="2021-11-28 (2)" src="https://user-images.githubusercontent.com/87449935/143766468-1933b4de-c124-48d3-b3b0-f70b61244633.png">
+
   
